@@ -13,22 +13,56 @@ minute level.
 
 `src/gen.py`: Don't care about this, just a middleware function.
 
-`flow.yml`: FnF flow definition, this will invoke target function.
-
-`template.yml`: FC fun template definition to deploy all FC functions and time trigger.
+`template.yml`: Use [Aliyun ROS](https://help.aliyun.com/document_detail/28852.html?spm=a2c4g.11186623.6.542.d32454bcyatnN2) service, orchest all resoucrces, this includes:
+  - Ram Role `TimerFCRole-<random-suffix>` and `TimerFnFRole-<random-suffix>`
+  - FC service `FnFDemoTimer` with role `TimerFCRole-<random-suffix>`
+  - Functions `timer` `timer-gen` `timer-handler`
+  - Time Trigger `trigger` for function `timer`
+  - FnF flow `FnFSecondLevelTimer-<random-suffix>`
 
 ## How to use
-1. Replace `handler.py` to your own target function, which will be invoked every specific seconds.
+You can choose any way:
+### 1. FC Application center
+The implement has been integrated into [FC Application Center](https://fc.console.aliyun.com/fc/applications/cn-shanghai),
+you can go to create directly. <br>
+![run](https://img.alicdn.com/tfs/TB1CNC1sGL7gK0jSZFBXXXZZpXa-1385-676.gif)
 
-2. Go to [FnF console](https://fnf.console.aliyun.com/fnf/cn-shanghai/flows), create flow with `flow.yml`. for example named flow `demo-timer-seconds`.
 
-3. update `template.yml` payload duration and flow_name. For example:
-   - every second:<br>
-   `{"flow_name": "demo-timer-seconds", "input": {"duration": 1, "data": "hello world"}}`
-   - every 5 seconds:<br>
-    `{"flow_name": "demo-timer-seconds", "input": {"duration": 5, "data": "hello world"}}`
+### 2. Scripts
+Also you can use the scripts:
+1. Directly fun demo see how it works:<br>
+   `./deploy.sh`
+   This will invoke `timer-handler` function every seconds
+   
+2. Create or Update resources:<br>
+    ```bash
+    Action=create StackName=XXX ./deploy.sh
+    Action=update StackId=XXX ./deploy.sh
+    ```
+  
+3. Set target function with your own function:<br>
+    ```bash
+    ResourceArn={Your Function Arn} Action=update StackId=XXX ./deploy.sh
+    ```
 
-4. Run `fun deploy` to deploy all functions and time trigger of FC.
+4. Set second level duration(default 1s):<br>
+    ```bash
+    Duration=10 Action=update StackId=XXX ./deploy.sh
+    ```
 
-## Verify
-Your `handler.py` corresponding FC function `timer-handler`(defined in template.yml) will be invoked every specific seconds. 
+5. Set target function input event:<br>
+    ```bash
+    Input='{\"name\": \"hello world\"}' Action=update StackId=XXX ./deploy.sh
+    ```
+
+6. Set sls Project and Logstore<br>
+   ```bash
+   Project=XXX Logstore=XXX Action=update StackId=XXX ./deploy.sh
+   ```
+  
+**example**<br>
+```bash
+Action=create StackName=fnf-timer-demo ResourceArn=XXX Input='{\"name\": \"hello world\"} Duration=5' ./deploy.sh
+Action=update StackId=03d2ed3e-XXXX-XXX-b839-80d1c08b41f6 ResourceArn=XXX Input='{\"name\": \"hello world\"}' Duration=10 ./deploy.sh
+```
+

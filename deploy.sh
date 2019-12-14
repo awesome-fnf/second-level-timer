@@ -39,12 +39,12 @@ run() {
     fi
 
     if [[ $Action == "create" ]]; then
-        aliyun ros CreateStack --StackName $StackName $params --TemplateBody "$(cat ./ros.yml)" \
+        aliyun ros CreateStack --StackName $StackName $params --TemplateBody "$(cat ./template.yml)" \
             --Parameters.1.ParameterKey Input \
             --Parameters.1.ParameterValue "$Input"
 
     elif [[ $Action == "update" ]]; then
-        aliyun ros UpdateStack --StackId $StackId $params --TemplateBody "$(cat ./ros.yml)" \
+        aliyun ros UpdateStack --StackId $StackId $params --TemplateBody "$(cat ./template.yml)" \
             --Parameters.1.ParameterKey Input \
             --Parameters.1.ParameterValue "$Input"
     fi
