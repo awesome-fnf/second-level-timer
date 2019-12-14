@@ -16,8 +16,7 @@ def handler(event, context):
 
     evt = json.loads(event)
     trigger_time = evt['triggerTime']
-    payload = evt.get('payload', '{}')
-    duration = int(payload.get('duration', '1'))
+    duration = int(evt.get('duration', '1'))
     trigger_timestamp = datetime.strptime(trigger_time, RFC).timestamp()
 
     intervals = []

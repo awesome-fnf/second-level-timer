@@ -33,6 +33,7 @@ def handler(event, context):
     data = json.loads(payload)
     input = data.get('input', '')
     evt.update(payload=input)
+    evt['duration'] = data.get('duration', 1)
 
     start_execution(data.get('flow_name', ''), data.get('execution_name', ''), json.dumps(evt), context)
 
