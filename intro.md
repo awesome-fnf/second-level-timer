@@ -20,6 +20,6 @@
 4. 并行循环 foreach 步骤为序列中每个时间戳生成并行定时任务来调用目标函数 `timer-hander`
 
 框架图：
-![framework](https://img.alicdn.com/tfs/TB1YgGssF67gK0jSZPfXXahhFXa-1846-1244.jpg)
+![framework](https://img.alicdn.com/tfs/TB1oYolsGL7gK0jSZFBXXXZZpXa-1478-1002.jpg)
 
 

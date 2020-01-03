@@ -19,4 +19,4 @@ Execution process as below: <br>
 4. Finally, FnF parallel foreach step will generate a timer task for each timestamp in sequence, to parallel invoke function `timer-hander`.
 
 Framework:
-![framework](https://img.alicdn.com/tfs/TB1YgGssF67gK0jSZPfXXahhFXa-1846-1244.jpg)
+![framework](https://img.alicdn.com/tfs/TB1oYolsGL7gK0jSZFBXXXZZpXa-1478-1002.jpg)
