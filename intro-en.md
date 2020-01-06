@@ -5,6 +5,20 @@ Application provide a second-level time trigger for FC function.
 
 ## How to use
 
+Parameters：<br>
+- ResourceArn: Self-defined target function Arn
+- Input: Self-defined input for target function, can be string or json string
+    ```json
+    {
+     "triggerName":"trigger",
+     "triggerTime":"2019-12-12T09:56:05Z",
+     "payload": "YOUR_INPUT"
+    }
+    ```
+- Duration: Self-defined trigger interval
+- Project: sls project
+- Logstore: sls logstore
+
 After deploy finished, the function specified in `ResourceArn` will be invoked every specified seconds.
 
 ![run](https://img.alicdn.com/tfs/TB1CNC1sGL7gK0jSZFBXXXZZpXa-1385-676.gif)

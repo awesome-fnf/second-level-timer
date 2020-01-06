@@ -5,6 +5,20 @@
 
 ## 调用示例
 
+应用参数说明：<br>
+- ResourceArn: 可自定义的被秒级定时触发的目标函数 Arn
+- Input: 可自定义的触发目标函数时的输入，会作为 payload 字段传给目标函数。比如输入 YOUR_INPUT，目标函数会接受到如下输入：
+    ```json
+    {
+     "triggerName":"trigger",
+     "triggerTime":"2019-12-12T09:56:05Z",
+     "payload": "YOUR_INPUT"
+    }
+    ```
+- Duration: 设定的秒级触发间隔，最好能被 60s 整除，比如 1， 2， 5 等
+- Project: 日志服务 sls 的 project
+- Logstore: 日志服务 sls 的 logstore
+
 应用部署后，`ResourceArn` 参数中指定的函数会被自动定时触发
 
 ![run](https://img.alicdn.com/tfs/TB1CNC1sGL7gK0jSZFBXXXZZpXa-1385-676.gif)
@@ -22,4 +36,5 @@
 框架图：
 ![framework](https://img.alicdn.com/tfs/TB1oYolsGL7gK0jSZFBXXXZZpXa-1478-1002.jpg)
 
+更详细的信息请参考：[秒级定时触发器](https://yq.aliyun.com/articles/739119?msgid=18722108)
 
