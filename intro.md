@@ -21,7 +21,7 @@
 
 应用部署后，`ResourceArn` 参数中指定的函数会被自动定时触发
 
-![run](https://img.alicdn.com/tfs/TB1CNC1sGL7gK0jSZFBXXXZZpXa-1385-676.gif)
+![run](https://img.alicdn.com/tfs/TB1OmK9thz1gK0jSZSgXXavwpXa-1385-676.gif)
 
 
 ## 工作原理

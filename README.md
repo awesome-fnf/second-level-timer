@@ -25,7 +25,7 @@ You can choose any way:
 ### 1. FC Application center
 The implement has been integrated into [FC Application Center](https://fc.console.aliyun.com/fc/applications/cn-shanghai),
 you can go to create directly. <br>
-![run](https://img.alicdn.com/tfs/TB1CNC1sGL7gK0jSZFBXXXZZpXa-1385-676.gif)
+![run](https://img.alicdn.com/tfs/TB1OmK9thz1gK0jSZSgXXavwpXa-1385-676.gif)
 
 
 ### 2. Scripts

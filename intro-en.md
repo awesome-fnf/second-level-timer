@@ -21,7 +21,7 @@ Parameters：<br>
 
 After deploy finished, the function specified in `ResourceArn` will be invoked every specified seconds.
 
-![run](https://img.alicdn.com/tfs/TB1CNC1sGL7gK0jSZFBXXXZZpXa-1385-676.gif)
+![run](https://img.alicdn.com/tfs/TB1OmK9thz1gK0jSZSgXXavwpXa-1385-676.gif)
 
 ## Framework
 
