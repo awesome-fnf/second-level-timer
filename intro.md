@@ -36,5 +36,6 @@
 框架图：
 ![framework](https://img.alicdn.com/tfs/TB1oYolsGL7gK0jSZFBXXXZZpXa-1478-1002.jpg)
 
-更详细的信息请参考：[秒级定时触发器](https://yq.aliyun.com/articles/739119?msgid=18722108)
-
+更详细的信息请参考：<br>
+[秒级定时触发器](https://yq.aliyun.com/articles/739119?msgid=18722108)<br>
+[应用模板代码](https://github.com/awesome-fnf/second-level-timer)
